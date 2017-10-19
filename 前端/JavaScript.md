@@ -10,7 +10,7 @@ Js 文件可以在<head>,<body>和引用单独的js文件
 
 #### DOM
 
-![DOM](https://github.com/jinjinanan/note/blob/master/Sources/Screen Shot 2017-10-19.png)
+![DOM](https://github.com/jinjinanan/note/blob/master/Sources/ScreenShot2017-10-19.png)
 
 *操作HTML*
 
