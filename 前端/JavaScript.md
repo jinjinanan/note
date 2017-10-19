@@ -12,7 +12,7 @@ Js 文件可以在<head>,<body>和引用单独的js文件
 
 ![DOM](https://github.com/jinjinanan/note/blob/master/Sources/ScreenShot2017-10-19.png)
 
-*操作HTML*
+**操作HTML**
 
 |操作|操作|
 |---|---|
@@ -21,7 +21,7 @@ Js 文件可以在<head>,<body>和引用单独的js文件
 |JavaScript 能够改变页面中的所有 CSS 样式|	`document.getElementById("p2").style.color="blue";` |
 |JavaScript 能够对页面中的所有事件做出反应||
 
-*寻找HTML*
+**寻找HTML**
 
 |操作|操作|
 |---|---|
@@ -29,7 +29,7 @@ Js 文件可以在<head>,<body>和引用单独的js文件
 |通过标签名找到 HTML 元素|`getElementsByTagName`|
 |通过类名找到 HTML 元素||
 
-*Dom事件*
+**Dom事件**
 
 - onload 和 onunload 事件会在用户进入或离开页面时被触发。
 - onload 事件可用于检测访问者的浏览器类型和浏览器版本，并基于这些信息来加载网页的正确版本。
