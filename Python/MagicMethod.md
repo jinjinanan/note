@@ -10,6 +10,21 @@
 #### `__new__`
 构造函数，
 
+#### `__call__`
+class实现`__call__`方法，该class的instance可以当函数使用
+```
+class Animal(object):
+
+    __call__(self, words):
+        print ('Hello: %s)% words
+
+if __name__ == "__main__":
+    cat = Animal()
+    cat("I am cat!")
+
+>>> Hello: I am cat!
+```
+
 #### `__class__`
 每个对象都有`__class__`用来返回对象的类型
 `type()`可以查看类或实例的类型
