@@ -102,3 +102,6 @@ def __init__(self, label=None, validators=None, filters=tuple(),
 |A sequence of **validators** to call when `validate` is called.|||
 |validate|TV|使...生效|
 |widgets|N|小部件|
+| a string containing only whitespace **characters is
+    considered false**||视为假|
+|Furthermore|adv|而且|
