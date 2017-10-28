@@ -31,11 +31,12 @@ class HomeExposure(FileAdmin):
 
 
 ## 单词
-| 单词       | 词性   |  词义  |
-| --------   | -----:  | :----:  |
+| 单词       | 词性   |  词义  |例子|
+| --------   | -----:  | :----:  | --- |
 |Alternatively||
-|dedicate||
-|a dedicated set of admin pages||一组专用的管理页面|
+|dedicate|V|把...献给|
+|dedicated|adj|献身的，专心致志的|a dedicated teacher |
+|Model views allow you to add a **dedicated** set of admin pages for managing any model in your database.|||
 |backend||端|
 |administrative pieces||管理部件|
 |Straight|adj||
@@ -45,4 +46,5 @@ class HomeExposure(FileAdmin):
 |suit|N|套装|
 |the CRUD operations|N|Create,Retrieve,Update,Delete|
 |ability|N|能力|
+
 
