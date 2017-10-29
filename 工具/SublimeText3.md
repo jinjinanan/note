@@ -33,4 +33,5 @@
 Git: 其他命令
 1. Git add
 2. Git commit
-3. git push
+3. Git push
+[参考](http://www.cnblogs.com/terrylin/archive/2013/04/04/2999465.html)
