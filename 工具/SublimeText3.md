@@ -31,3 +31,6 @@
 ### SublimeGit
 `Git: Status` 查看状态
 Git: 其他命令
+1. Git add
+2. Git commit
+3. git push
