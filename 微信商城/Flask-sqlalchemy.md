@@ -1,7 +1,26 @@
 # Flask-Sqlalchemy
 
 ### 查询数据
+---
 
+|功能|时间|更多|
+|---|---|---|
+|[增改删查](#1)|2017/10/28||
+
+<h4 id='1'>增改删查</h4>
+**增**  
+```
+	def confirm(self):
+		db.session.add(self)
+```
+
+**删**  
+```
+    def delete(self):
+        m = Admin.query.filter_by(username=self.username).first()
+        db.session.delete(m)
+        db.session.commit()
+```
 
 
 ## 单词
