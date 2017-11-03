@@ -252,7 +252,9 @@ completionHandlers.first?() print(instance.x)
 
 ```
 
-逃逸闭包与
+#### 自动闭包
+
+### 枚举
 
 
 
