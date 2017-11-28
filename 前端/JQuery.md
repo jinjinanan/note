@@ -9,7 +9,7 @@
 
 jQuery 的 action() 执行对元素的操作([事件](http://www.w3school.com.cn/jquery/jquery_ref_events.asp))
 
-`$(document).ready(function(){});`
+`$(document).ready(function(){});` 简写 `($(function(){})`
 
 防止文档在完全加载（就绪）之前运行 jQuery 代码
 
@@ -36,6 +36,32 @@ jQuery 的 action() 执行对元素的操作([事件](http://www.w3school.com.cn
 ### JQuery 动画
 
 ### Jquery AJAX
+#### POST & GET
+声明
+```
+$.post(URL,data,callback);
+```
+例子
+```
+ $.post("demo_test_post.asp",
+  {
+    name:"Donald Duck",
+    city:"Duckburg"
+  },
+  function(data,status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
+```
+简写
+```
+$.ajax({
+  type: 'POST',
+  url: url,
+  data: data,
+  success: success,
+  dataType: dataType
+});
+```
 
 [AJAX手册](http://www.w3school.com.cn/jquery/jquery_ref_ajax.asp)
 
