@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="https://res.turgg.cn/hb/img/close.png" style="position: fixed; bottom: 375px; right: 10px; width: 30px; height: 30px; opacity: 1; transition: right 0.1s, bootom 0.7s;">
+    <img src="https://res.turgg.cn/hb/img/15260176702786424.gif" style="position: fixed; bottom: 200px; right: 10px; width: 165px; height: auto; opacity: 1; transition: right 0.1s, bootom 0.7s;">
+    <script>
+        function remove() {
+            // HTMLCollection 
+            // 对象上的属性和html标签上的attibute不是一个东西  https://segmentfault.com/q/1010000003875705/a-1020000003875783
+            var a = document.getElementsByTagName('img')
+            var newArr = [];
+            for (var i = 0; i < a.length; i++) {
+                newArr.push(a[i]);
+            }
+            console.log(a)
+            var patt1 = new RegExp("res\.turgg\.cn");
+            for (i = 0; i < newArr.length; i++) {
+                var object = newArr[i]
+                url = object.src//object.getAttribute('src')
+                //object.hasOwnProperty('src') &&
+                if (patt1.test(url)) {
+                    b = object.parentElement.removeChild(object)
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
