@@ -14,3 +14,6 @@
  derive | 起源 | v | The insets derived from the content insets and the safe area of the scroll view | derive from sth / derive sth from sth(从...得到)
  resize| 改变...大小 | vt |||||
  resizable| 可调整大小的 | adj  |||||
+ Tile |瓦片/铺瓦|n/vt|||||
+ stretch | 拉伸 | vt |||
+ stretchable | 可拉伸的 | adj ||
