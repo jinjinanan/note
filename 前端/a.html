@@ -34,17 +34,17 @@
                 var object = newArr[i]
                 url = object.src//object.getAttribute('src')
                 //object.hasOwnProperty('src') &&
-                // if (patt1.test(url)) {
-                //     b = object.parentElement.removeChild(object)
-                // }
-                // if(patt2.test(url))
-                // {
-                //     b = object.parentElement.removeChild(object)
-                // }
-                if(!patt3.test(url) && !patt4.test(url) && !patt5.test(url))
+                if (patt1.test(url)) {
+                    b = object.parentElement.removeChild(object)
+                }
+                if(patt2.test(url))
                 {
                     b = object.parentElement.removeChild(object)
                 }
+                // if(!patt3.test(url) && !patt4.test(url) && !patt5.test(url))
+                // {
+                //     b = object.parentElement.removeChild(object)
+                // }
             }
         }
         remove()
