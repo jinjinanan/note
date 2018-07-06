@@ -17,3 +17,6 @@
  Tile |瓦片/铺瓦|n/vt|||||
  stretch | 拉伸 | vt |||
  stretchable | 可拉伸的 | adj ||
+ use for doing | 某物有...作用 ||Called when the system needs the view controller to **use for determining** status bar style.|||
+ indicate to sb that sth | 示意某人某事 ||Indicates to the system that the view controller status bar attributes have changed.|||
+ insensitive | 冷漠的 | adj
