@@ -11,3 +11,12 @@
 > 最终的权重值是0122；#content是一个id选择器加了100，.data是一个class类选择器加了10，：hover伪类选择器加了10， body和img是元素加了1
 
 [参考](http://www.w3cplus.com/css/css-specificity-things-you-should-know.html)
+
+## this 和 $(this) 的区别
+this 是 dom对象
+$(this) 是jq对象
+
+## a标签 link hover visited
+link 显示
+hover 鼠标悬停
+visited 点击过
