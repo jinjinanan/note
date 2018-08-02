@@ -1,6 +1,7 @@
 # JQuery
 
 ### 基础语法
+
 `$(selector).action()`
 
 美元符号定义 jQuery
