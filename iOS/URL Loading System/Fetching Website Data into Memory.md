@@ -1,7 +1,7 @@
 # Fetching Website Data into Memory
 
 **Receive** data **directly** into memory by creating a data task from a URL session.
-从 URL session 创建的 data task 接受数据 进入内存
+从 URL session 创建的 data task 接受数据进入内存
 
 ## Overview
 
