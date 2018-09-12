@@ -96,7 +96,6 @@ position delete(Node* node,int value){
         delete(node->left,value);
     }
     else{
-        printf("3");
         if(node->left && node->right){
             temp = get_maxiPosition(node->left);
             node->data = temp->data;
@@ -111,6 +110,7 @@ position delete(Node* node,int value){
                 node = node->left;
             }
             free(temp);
+            // printf("%p",temp);
         }
     }
     return node;
@@ -182,19 +182,19 @@ void postOrder(Node *node){
 
 int main(int argc, char const *argv[])
 {
-    int arr[7] = {6,3,8,2,5,1,7}; //正数
+    int arr[1] = {6}; //正数
     Tree tree;
     tree.root = NULL;
     int i;
-    for(i=0;i<7;i++){
+    for(i=0;i<1;i++){
         insert(&tree,arr[i]);
     }
 
-    // preOrder(tree.root);
+    preOrder(tree.root);
     // inOrder(tree.root);
 
     delete(tree.root,6);
-    // preOrder(tree.root);
+    preOrder(tree.root);
     // inOrder(tree.root);
 
     
