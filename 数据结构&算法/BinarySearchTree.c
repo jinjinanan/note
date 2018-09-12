@@ -11,6 +11,40 @@ typedef struct{
     Node* root;
 }Tree;
 
+typedef Node* position;
+
+// 查找
+int find(Node* node,int value){
+    if(!node){return -1;}
+    if(value > node->data){
+        return find(node -> right,value);
+    }
+    else if(value < node->data){
+        return find(node -> left,value);
+    }
+    else{
+        return node->data;
+    }
+
+}
+
+
+
+position get_maxiPosition(Node* node){
+    if(node == NULL){
+        return NULL;
+    }
+    else{
+        position m1 = get_maxiPosition(node->left);
+        position m2 = get_maxiPosition(node->right);
+        position m3 = node;
+        position max = m1;
+        if(m2->data > max->data){max = m2;}
+        if(m3->data > max->data){max = m3;}
+        return max;
+    }
+}
+
 // 插入
 void insert(Tree* tree,int value){
     Node* node = malloc(sizeof(Node));// 动态分配内存 malloc
@@ -46,6 +80,42 @@ void insert(Tree* tree,int value){
     }
 }
 
+// 删除
+/*
+删除考虑三种情况
+*/
+position delete(Node* node,int value){
+    position temp;
+    if(!node){return NULL;}
+    else if(value > node->data){
+        printf("1");
+        delete(node->right,value);
+    }
+    else if(value < node->data){
+        printf("2");
+        delete(node->left,value);
+    }
+    else{
+        printf("3");
+        if(node->left && node->right){
+            temp = get_maxiPosition(node->left);
+            node->data = temp->data;
+            node->left = delete(node->left,temp->data);
+        }
+        else{
+            temp = node;
+            if(!node->left){
+                node = node->right;
+            }
+            else if(!node->right){
+                node = node->left;
+            }
+            free(temp);
+        }
+    }
+    return node;
+}
+
 // 求最大值
 int get_maxinum(Node* node){
     if(node == NULL){
@@ -60,6 +130,11 @@ int get_maxinum(Node* node){
         if(m3 > max){max = m3;}
         return max;
     }
+}
+
+int get_minnum(Node *node){
+    int min;
+    return min;
 }
 
 // 求树的高度
@@ -114,11 +189,24 @@ int main(int argc, char const *argv[])
     for(i=0;i<7;i++){
         insert(&tree,arr[i]);
     }
+
     // preOrder(tree.root);
     // inOrder(tree.root);
-    int h = get_height(tree.root);
-    printf("height = %d \n",h);
-    int m = get_maxinum(tree.root);
-    printf("maxiNum = %d \n",m);
+
+    delete(tree.root,6);
+    // preOrder(tree.root);
+    // inOrder(tree.root);
+
+    
+    // int h = get_height(tree.root);
+    // printf("height = %d \n",h);
+    // int m = get_maxinum(tree.root);
+    // printf("maxiNum = %d \n",m);
+
+
+    // int result = find(tree.root,1);
+    // printf("result = %d \n",result);
+
+
     return 0;
 }
