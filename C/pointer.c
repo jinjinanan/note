@@ -71,7 +71,8 @@ int main(int argc, char const *argv[])
     // learnPointer()
 
     // 指针作为参数
-    learnPointerAsParmater();
-    return 0;
+    // learnPointerAsParmater();
+
+   
 
 }

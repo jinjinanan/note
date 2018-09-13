@@ -88,12 +88,10 @@ position delete(Node* node,int value){
     position temp;
     if(!node){return NULL;}
     else if(value > node->data){
-        printf("1");
-        delete(node->right,value);
+        node->right = delete(node->right,value);
     }
     else if(value < node->data){
-        printf("2");
-        delete(node->left,value);
+        node->left = delete(node->left,value);
     }
     else{
         if(node->left && node->right){
@@ -182,20 +180,21 @@ void postOrder(Node *node){
 
 int main(int argc, char const *argv[])
 {
-    int arr[1] = {6}; //正数
+    int arr[6] = {6,3,4,5,7,8}; //正数
     Tree tree;
     tree.root = NULL;
     int i;
-    for(i=0;i<1;i++){
+    for(i=0;i<6;i++){
         insert(&tree,arr[i]);
     }
 
     preOrder(tree.root);
-    // inOrder(tree.root);
+    inOrder(tree.root);
 
     delete(tree.root,6);
+    printf("-----------\n");
     preOrder(tree.root);
-    // inOrder(tree.root);
+    inOrder(tree.root);
 
     
     // int h = get_height(tree.root);
