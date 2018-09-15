@@ -1,8 +1,7 @@
 # AVFoundation
----
-
 
 ## 应用
+
 ### 获得视频截图
 
 ``` Objective-C
