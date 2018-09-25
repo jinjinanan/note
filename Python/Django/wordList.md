@@ -7,3 +7,6 @@
 5. but **strives** to stay simple **enough** for non-programmers to use. [v] 努力 【adv】足够的
 6. The code **above** loads the news/year_archive.html template. 【adv】
 7. Django has a template search path, which allows you to **minimize redundancy among templates**
+8. statement ： 声明
+9. annotation： 注解 n
+10. migrate:vi 移居
