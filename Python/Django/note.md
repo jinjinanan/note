@@ -13,6 +13,7 @@
 - mysite/wsgi.py:一个基于WSGI的web服务器进入点，提供底层的网络通信功能，通常不用关心。
 
 ### 创建应用
+
 `$ python manage.py startapp appName`
 
 include 多级路由。它把接收到的url地址去除前面的正则表达式，将剩下的字符串传递给下一级路由进行判断
@@ -24,6 +25,8 @@ urlpatterns = [
     url(r'^polls/', include('polls.urls')),
 ]
 ```
+
+## 数据库&model&后台
 
 ### 数据库操作
 
@@ -39,21 +42,52 @@ DATABASES = {
 ENGINE 数据库引擎
 NAME 数据库名字。
 
-`python manage.py migrate`
-自动创建Django的setting中INSTALLED_APPS字段下应用的表
-
-在自己的app的models下写model
+在迁移之前需要在 Django 的 setting 中 INSTALLED_APPS 字段下添加该应用
 
 `python manage.py makemigrations appName`
 用文件记录models的改动
 
+`python manage.py migrate`
+对数据库执行真正的迁移动作
+
 `python manage.py sqlmigrate polls 0001`
-执行改动
+可以看看migrate实际执行的sql语句
+
+已存在的model添加字段需要添加默认值
+`from django.utils import timezone`可以设置现在的时间
 
 ### 后台
 
 `python manage.py createsuperuser`
 创建一个可以登陆后台的账户
+
+### 在后台中管理model
+
+在app的admin.py中，注册model
+`admin.site.register([ModelName,ModelName1])`
+
+#### admin.site.register([ModelName,ModelName1])
+
+位置：/django/contrib/admin/sites.py
+
+```Python
+class AdminSite:...
+
+class DefaultAdminSite(LazyObject):
+    def _setup(self):
+        AdminSiteClass = import_string(apps.get_app_config('admin').default_site)
+        self._wrapped = AdminSiteClass()
+
+site = DefaultAdminSite()
+```
+
+DefaultAdminSite 是一个继承自LazyObject的懒加载包装类。
+`apps.get_app_config('admin').default_site` 导入的是`AdminSite`类。
+`admin.site.register()`在
+`AdminSite`定义
+`def register(self, model_or_iterable, admin_class=None, **options):`
+
+## 视图
 
 ### url正则
 
