@@ -32,8 +32,12 @@ URL匹配模式书写规范
 `url(r'^blog/(?P<year>[0-9]{4})/$', views.year_archive, {'foo': 'bar'}),`
 向视图 year_archive 传递额外的关键字为foo的参数
 
-
+## URL反向解析
 
+Python 代码解析
+
+模版中解析
+
 ## 视图函数和快捷方式
 
 HttpREsponse
