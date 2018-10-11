@@ -34,10 +34,29 @@ URL匹配模式书写规范
 
 ## URL反向解析
 
-Python 代码解析
+```Python
+urlpatterns = [
+    #...
+    re_path(r'^articles/([0-9]{4})/$', views.year_archive, name='alias'),
+    #...
+]
+```
 
-模版中解析
+### Python 代码解析：使用reverse()函数
+
+`return HttpResponseRedirect(reverse('alias', args=(year,)))`
+
+### 模版中解析：使用url模板标签
+
+`<a href="{% url 'alias' yearvar %}">`
 
+
 ## 视图函数和快捷方式
 
-HttpREsponse
+### render 模版搜索顺序
+
+### HttpResponse
+
+### redirect 重定向
+
+`redirect('/Practice1/index/')`

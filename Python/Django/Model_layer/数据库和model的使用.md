@@ -1,8 +1,9 @@
-# model
+# 数据库和model的使用
 
 ## Django 使用 Mysql
 
 ### 1.下载pymysql
+
 `pip install pymysql`
 
 ### 2.配置 setting 
