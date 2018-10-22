@@ -1,5 +1,13 @@
 # Swift
 
+## 可选类型
+
+使用可选类型（optionals）来处理值可能缺失的情况
+
+强制解析：当你确定一个可选类型中有值，可以在变量后加`!`来获取值
+
+隐式解析可选类型（implicitly unwrapped optionals）：当可选类型被第一次赋值之后就可以确定之后一直有值的时候，主要被用在 Swift 中类的构造过程中。
+
 ## 访问控制
 
 private fileprivate internal public open

@@ -13,12 +13,14 @@
 #### 声明常量和变量
 
 let 来声明常量，用 var 来声明变量
-```
+
+```Swift
 let maximumNumberOfLoginAttempts = 10
 var currentLoginAttempt = 0
 ```
 
 #### 类型标注
+
 ```
 var welcomeMessage: String
 ```
