@@ -17,7 +17,7 @@
 2. contentInset
     1. contentSize 的 scrollview 的可滚动的区域
     2. contentOffset 是scrollview 当前显示区域顶点相对于frame顶点的偏移量
-    3. contentInset:![contentInset](../Sources/123.jpg)
+    3. contentInset: ![contentInset](../Sources/123.jpg)
 3. adjustedContentInset
    1. tableView的内容与边缘距离的是adjustedContentInset属性
    2. adjustedContentInset 计算方式
