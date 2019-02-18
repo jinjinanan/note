@@ -17,7 +17,7 @@
 2. contentInset
     1. contentSize 的 scrollview 的可滚动的区域
     2. contentOffset 是scrollview 当前显示区域顶点相对于frame顶点的偏移量
-    3. contentInset:![contentInset](../../Sources/contentInsetInScrollview.jpg)
+    3. contentInset:![contentInset](../Sources/contentInsetInScrollview.jpg)
 3. adjustedContentInset
    1. tableView的内容与边缘距离的是adjustedContentInset属性
    2. adjustedContentInset 计算方式
@@ -34,10 +34,10 @@ UIScrollViewContentInsetAdjustmentAlways | adjustedContentInset = safeAreaInset 
 #### translucent
 
 1. YES
-    ![图片](../../Sources/1530495757.png)
+    ![图片](../Sources/1530495757.png)
 2. NO
 
-    ![图片](../../Sources/1530495069.png)
+    ![图片](../Sources/1530495069.png)
 
 translucent |UIView(iPhone 8) | UITableView(iPhone 8)
 --- |--- | ---
@@ -52,13 +52,13 @@ YES | H:667 | H:667 Y:-64(Bounds)
 
 > Always include the safe area insets in the content adjustment.
 
-![图片](../../Sources/1530497559.png)
+![图片](../Sources/1530497559.png)
 
 2.UIScrollViewContentInsetAdjustmentNever
 
 > Do not adjust the scroll view insets.
 
-![图片](../../Sources/1530498058.png)
+![图片](../Sources/1530498058.png)
 
 translucent | contentInsetAdjustmentBehavior | UIView(iPhone 8) | UITableView(iPhone 8)
 --- |--- | --- | ---
