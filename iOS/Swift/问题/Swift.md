@@ -30,6 +30,17 @@ open：可以任意访问，继承和重写
 
 ## 闭包
 
+## 协议
+
+```Swift
+protocol:class
+{
+
+}
+```
+
+限定协议只能是类实现
+
 ### 表达式
 
 ```Swift
@@ -83,3 +94,53 @@ closerName(1) //调用闭包
 添加附属脚本 - subscripts
 添加并使用嵌套类型 - nested types
 遵循并实现某一协议 - conform protocol
+
+## 必要构造器
+
+convenience 和 required
+
+### 指定构造器和便利构造器的使用规则
+
+1. 一个指定构造器必须调用它直系父类的一个指定构造器。
+2. 一个便利构造器必须调用这个类自身的另一个构造器。
+3. 一个便利构造器最终一定会调用一个指定构造器。
+
+## 属性
+
+### 普通属性
+
+### 计算属性
+
+### 带监视的属性
+
+willSet和didSet
+
+```Swift
+var age:Int = 18{
+  
+    didSet{
+        print("didSet   \(oldValue)")
+    }
+    willSet{
+        print("willSet  \(newValue)")
+    }
+  }
+```
+
+## as & as! & as?
+
+### as
+
+向上转型（upcasts）
+消除二义性，数值类型转换
+switch 语句中进行模式匹配
+
+### as!使用场合
+
+向下转型（Downcasting）
+
+### as?使用
+
+as? 和 as! 操作符的转换规则完全一样。但 as? 如果转换不成功的时候便会返回一个 nil 对象。成功的话返回可选类型值（optional），需要我们拆包使用。
+
+## gard
