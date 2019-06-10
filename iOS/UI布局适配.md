@@ -100,9 +100,9 @@ capInset
 
 7   8   9
 
-![图片](../../Sources/capInset.jpg)
+![图片](../Sources/capInset.jpg)
 
-不变：1，3，7，9。 5 
+不变：1，3，7，9, 5 
 
 变：2，4，6，8
 
