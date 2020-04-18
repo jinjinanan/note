@@ -71,6 +71,9 @@ Date:   Wed Apr 15 20:33:38 2020 +0800
 3. git 重置之前第100一个提交(HEAD~100)
 `git reset --hard HEAD~100`
 
+### git查看状态
+`git status`
+
 ## 问题
 
 ### git无法pull仓库refusing to merge unrelated histories
