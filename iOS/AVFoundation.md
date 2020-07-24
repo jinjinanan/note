@@ -13,7 +13,7 @@
 -(void)thumbnailImageRequest:(CGFloat )timeBySecond{
     //创建URL
     NSURL *url=[self getNetworkUrl];
-     
+    
     //根据url创建AVURLAsset
     AVURLAsset *urlAsset=[AVURLAsset assetWithURL:url];
      
