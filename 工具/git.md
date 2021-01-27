@@ -42,6 +42,8 @@ example
 
 `git log`
 
+- --graph 图形化log
+
 example
 
 ```
