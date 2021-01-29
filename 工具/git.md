@@ -7,29 +7,29 @@
 
 ## git 常用命令
 
+- git 将本地仓库添加到远程
+- git 查看远程分支和对应的名称
+- git 查看历史
+- git推送
+- git pull
+- git重置到某次提交
+- git查看状态
+
+
 ### git 将本地仓库添加到远程
 
-`git remote add origin  你的远程仓库的url`
+`git remote add origin url`
 
-origin 是你远程仓库的别名
-真正的远程仓库是url
-origin 是 url 的简称
+- origin:是远程仓库链接的别名
+- url:远程仓库的链接
 
 `git push -u origin master`
 
 -u 参数指定一个默认主机，这样后面就可以不加任何参数使用git push
 
-### git强制推送
-
-`git push origin master -f`
-
 ### git 查看远程分支和对应的名称
 
-example
-
 `git remote -v`
-
-返回  远程分支的代称 链接(格式)
 
 ``` Command
 漫读	http://192.168.6.10:8083/ios/mandu.git (fetch)
@@ -42,29 +42,30 @@ example
 
 `git log`
 
+`git log --graph`
 - --graph 图形化log
 
-example
+### git推送
 
-``` Command
-commit 782217b9f731da3e577d7088abcd20e8f0c1643f (HEAD -> dev_chen, 码云/dev_chen)
-Author: clb <chenlinbo@example.com>
-Date:   Thu Apr 16 10:31:37 2020 +0800
+`git push origin master`
 
-    //暂存
+- origin:远程分支名称
+- master:本地分支名称
 
-commit d92de13dc4ea10482f5e7505c1e9714f4885e45c
-Author: clb <chenlinbo@example.com>
-Date:   Thu Apr 16 10:04:15 2020 +0800
+#### 强制推送
 
-    [fix]修改漫画天乩书架不同步
+`git push origin master -f`
 
-commit 04c89cd5a7a460578a0d85dee09ce7b58e6bae97
-Author: clb <chenlinbo@example.com>
-Date:   Wed Apr 15 20:33:38 2020 +0800
+- -f: 强制推送参数
 
-    [fix]删除bug
-```
+### git pull
+
+命令用于从远程获取代码并合并本地的版本。
+
+`git pull origin master`
+
+- origin:(远程分支名字)
+- master:本地分支名，可以省略
 
 ### git重置到某次提交
 
