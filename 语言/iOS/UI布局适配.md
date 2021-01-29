@@ -8,7 +8,6 @@
 3. 状态栏
 4. define a stretchable image (导航栏背景颜色，图片拉伸)
 5. NSURLProtocol
-6. 启动页适配
 
 ### contentInset & adjustedContentInset & safeAreaInset
 
@@ -17,7 +16,7 @@
 2. contentInset
     1. contentSize 的 scrollview 的可滚动的区域
     2. contentOffset 是scrollview 当前显示区域顶点相对于frame顶点的偏移量
-    3. contentInset:![contentInset](../Sources/contentInsetInScrollview.png)
+    3. contentInset:![contentInset](../../Sources/contentInsetInScrollview.png)
 3. adjustedContentInset
    1. tableView的内容与边缘距离的是adjustedContentInset属性
    2. adjustedContentInset 计算方式
@@ -34,10 +33,9 @@ UIScrollViewContentInsetAdjustmentAlways | adjustedContentInset = safeAreaInset 
 #### translucent
 
 1. YES
-    ![图片](../Sources/1530495757.png)
+    ![图片](../../Sources/1530495757.png)
 2. NO
-
-    ![图片](../Sources/1530495069.png)
+    ![图片](../../Sources/1530495069.png)
 
 translucent |UIView(iPhone 8) | UITableView(iPhone 8)
 --- |--- | ---
@@ -52,13 +50,13 @@ YES | H:667 | H:667 Y:-64(Bounds)
 
 > Always include the safe area insets in the content adjustment.
 
-![图片](../Sources/1530497559.png)
+![图片](../../Sources/1530497559.png)
 
 2.UIScrollViewContentInsetAdjustmentNever
 
 > Do not adjust the scroll view insets.
 
-![图片](../Sources/1530498058.png)
+![图片](../../Sources/1530498058.png)
 
 translucent | contentInsetAdjustmentBehavior | UIView(iPhone 8) | UITableView(iPhone 8)
 --- |--- | --- | ---
@@ -100,7 +98,7 @@ capInset
 
 7   8   9
 
-![图片](../Sources/capInset.jpg)
+![图片](../../Sources/capInset.jpg)
 
 不变：1，3，7，9, 5 
 
@@ -110,20 +108,3 @@ capInset
 
 [拉伸实验](https://www.jianshu.com/p/a577023677c1)
 
-### 更新约束
-
-``` Objective-C
-updateConstraintsIfNeeded
-updateConstraints
-needsUpdateConstraints
-setNeedsUpdateConstraints
-```
-
-### 启动页适配
-
-LaunchImage 管理启动页
-
-iPhone X :1125 * 2436
-Retina HD 5.5 : 1242 * 2208
-Retina HD 4.7 : 750 * 1334
-Retina HD 4 : 640 * 1136
