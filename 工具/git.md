@@ -31,7 +31,7 @@ example
 
 返回  远程分支的代称 链接(格式)
 
-```
+``` Command
 漫读	http://192.168.6.10:8083/ios/mandu.git (fetch)
 漫读	http://192.168.6.10:8083/ios/mandu.git (push)
 码云	https://gitee.com/null_788_9135/xs.git (fetch)
@@ -46,7 +46,7 @@ example
 
 example
 
-```
+``` Command
 commit 782217b9f731da3e577d7088abcd20e8f0c1643f (HEAD -> dev_chen, 码云/dev_chen)
 Author: clb <chenlinbo@example.com>
 Date:   Thu Apr 16 10:31:37 2020 +0800
@@ -65,18 +65,21 @@ Date:   Wed Apr 15 20:33:38 2020 +0800
 
     [fix]删除bug
 ```
+
 ### git重置到某次提交
-1. git 重置上一次提交(一个^)
-`git reset --hard HEAD^`
-2. git 重置上上一次提交 (两个^^)
-`git reset --hard HEAD^^`
-3. git 重置之前第100一个提交(HEAD~100)
-`git reset --hard HEAD~100`
+
+1. git 重置上一次提交(一个^) `git reset --hard HEAD^`
+2. git 重置上上一次提交 (两个^^) `git reset --hard HEAD^^`
+3. git 重置之前第100一个提交(HEAD~100) `git reset --hard HEAD~100`
 
 ### git查看状态
+
 `git status`
 
 ## 问题
+
+- git无法pull仓库refusing to merge unrelated histories
+- git 遇到数字文件名
 
 ### git无法pull仓库refusing to merge unrelated histories
 
@@ -86,3 +89,7 @@ Date:   Wed Apr 15 20:33:38 2020 +0800
 git不能提交（git认为写错了origin）。这时候需要使用 `--allow-unrelated-histories` 命令。
 告诉 git 这两个 repository 确定合并
 命令：`git pull origin master --allow-unrelated-histories`
+
+### git 遇到数字文件名
+
+`git config --global core.quotepath false`
