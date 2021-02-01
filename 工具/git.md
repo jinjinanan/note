@@ -1,5 +1,27 @@
 # git 的使用
 
+## git的不同区
+
+- Working Directory
+- Stage/Index
+- Repository/Git Directory
+- Remote Directory
+
+![img](../Sources/1090617201810082115574022328387261.png)
+
+- modified（在工作目录中添加、修改文件；）
+- staged（将需要进行版本管理的文件放入暂存区域；）
+- committed（将暂存区域的文件提交到git仓库。）
+
+## 不同状态与工作流程
+
+![img](../Sources/10906172018100821224587752530897.png)
+
+- Untracked
+- Unmodify
+- Modified
+- Staged
+
 ## 教程
 
 [git-book](https://git-scm.com/book/zh/v2)
@@ -12,6 +34,7 @@
 - git 查看历史
 - git推送
 - git pull
+- git fetch
 - git重置到某次提交
 - git查看状态
 
@@ -43,6 +66,7 @@
 `git log`
 
 `git log --graph`
+
 - --graph 图形化log
 
 ### git推送
@@ -66,6 +90,27 @@
 
 - origin:(远程分支名字)
 - master:本地分支名，可以省略
+
+### git fetch 
+
+`git fetch remoteName branchName : localBranchName`
+
+将远程分支branchName拉取到本地指定localBranchName分支
+
+### git diff
+
+比较stage和work directory里文件的差别
+
+`git diff branchName` 
+
+
+### git merge
+
+`git merge branchName`
+
+合并branchname分支到当前分支
+
+合并
 
 ### git重置到某次提交
 
