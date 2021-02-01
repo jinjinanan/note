@@ -9,10 +9,6 @@
 
 ![img](../Sources/1090617201810082115574022328387261.png)
 
-- modified（在工作目录中添加、修改文件；）
-- staged（将需要进行版本管理的文件放入暂存区域；）
-- committed（将暂存区域的文件提交到git仓库。）
-
 ## 不同状态与工作流程
 
 ![img](../Sources/10906172018100821224587752530897.png)
@@ -35,6 +31,9 @@
 - git推送
 - git pull
 - git fetch
+- git diff
+- git merge
+- git restore
 - git重置到某次提交
 - git查看状态
 
@@ -101,8 +100,7 @@
 
 比较stage和work directory里文件的差别
 
-`git diff branchName` 
-
+`git diff branchName`
 
 ### git merge
 
@@ -111,6 +109,10 @@
 合并branchname分支到当前分支
 
 合并
+
+### git restore
+
+撤销修改
 
 ### git重置到某次提交
 
