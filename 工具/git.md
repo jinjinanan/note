@@ -78,6 +78,8 @@
 - `-u` 如果当前分支与多个主机存在追踪关系，可以使用改参数指定默认host
 - 不带任何参数的git push，默认只推送当前分支，这叫做simple方式。此外，还有一种matching方式，会推送所有有对应的远程分支的本地分支。 `git config --global push.default matching 或 git config --global push.default simple`
 - `--all` 将本地所有分支推送到远程分支
+- `--force` 强制推送
+- `--tags` 推送标签
 
 
 #### 强制推送
