@@ -10,6 +10,7 @@
 - 上传包的时候报 `Cannot proceed with delivery: an existing transporter instance is currently uploading this package`错误
 - vpn App审核2.1被拒
 - 更改微信appID的时候还要更改appsecret
+- 上线检查
 
 ## UI问题
 |  问题   | 解决  |
@@ -174,4 +175,11 @@ This app is marketed as being able to bypass geo-restrictions or content limitat
 Next Steps
 
 To resolve this issue, please ensure the app is not presented in such a way that it encourages users to bypass geo-restrictions or content limitations. As a reminder, all apps on the App Store must comply with the local laws for any territory in which they are made available.
+
+## 上线检查
+
+- version
+- build 
+- edit scheme -> release
+- url host
 
