@@ -27,8 +27,9 @@
 
 - git 将本地仓库添加到远程
 - git 查看远程分支和对应的名称
-- git 查看历史
-- git推送
+- git log
+- git push
+- git branch
 - git pull
 - git fetch
 - git diff
@@ -60,20 +61,24 @@
 码云	https://gitee.com/null_788_9135/xs.git (push)
 ```
 
-### git 查看历史
+### git log
 
 `git log`
 
-`git log --graph`
+- `--graph` 图形化log
 
-- --graph 图形化log
+### git push
 
-### git推送
+`git push remoteHostName localBranchName : remotebranchName`
 
-`git push origin master`
+- 省略远程分支，则会把本地分支推送到对应追踪关系上的远程分支
+- `git push origin master` 将本地master 推送到远程主机origin的master分支上
+- `git push origin :master` = `git push origin --delete master` 省略本地分支名，则会删除远程对应分支
+- `git push`如果存在追踪关系，则本地分支和远程分支名字都可以省略
+- `-u` 如果当前分支与多个主机存在追踪关系，可以使用改参数指定默认host
+- 不带任何参数的git push，默认只推送当前分支，这叫做simple方式。此外，还有一种matching方式，会推送所有有对应的远程分支的本地分支。 `git config --global push.default matching 或 git config --global push.default simple`
+- `--all` 将本地所有分支推送到远程分支
 
-- origin:远程分支名称
-- master:本地分支名称
 
 #### 强制推送
 
@@ -96,6 +101,12 @@
 
 将远程分支branchName拉取到本地指定localBranchName分支
 
+`git fetch remoteName`
+
+将远程主机的所有更新都取回到本地
+
+>所取回的更新，在本地主机上要用"远程主机名/分支名"的形式读取。比如origin主机的master，就要用origin/master读取。
+
 ### git diff
 
 比较stage和work directory里文件的差别
@@ -109,6 +120,16 @@
 合并branchname分支到当前分支
 
 合并
+
+### git branch
+
+`git branch`
+
+- -r 查看所有远程分支
+- -a 查看所有分支
+- `set-upstream localBranchName remoteName/localBranchName` 手动建立本地分支和远程分支的tracking
+
+
 
 ### git restore
 

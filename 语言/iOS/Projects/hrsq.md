@@ -9,6 +9,7 @@
 - file too small (length=0)
 - 上传包的时候报 `Cannot proceed with delivery: an existing transporter instance is currently uploading this package`错误
 - vpn App审核2.1被拒
+- 更改微信appID的时候还要更改appsecret
 
 ## UI问题
 |  问题   | 解决  |
