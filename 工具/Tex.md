@@ -38,4 +38,5 @@ $$\sqrt a, \sqrt[n]a, \sqrt[nm]{ab}$$
 $$a_i^2, a^2_i $$
 
 [教程1](https://zhuanlan.zhihu.com/p/124275975)
+[抄](https://zhuanlan.zhihu.com/p/144944235)
 
