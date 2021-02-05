@@ -9,6 +9,7 @@
 - file too small (length=0)
 - 上传包的时候报 `Cannot proceed with delivery: an existing transporter instance is currently uploading this package`错误
 - vpn App审核2.1被拒
+- vpn APP审核第三次被拒
 - 更改微信appID的时候还要更改appsecret
 - 上线检查
 
@@ -175,6 +176,174 @@ This app is marketed as being able to bypass geo-restrictions or content limitat
 Next Steps
 
 To resolve this issue, please ensure the app is not presented in such a way that it encourages users to bypass geo-restrictions or content limitations. As a reminder, all apps on the App Store must comply with the local laws for any territory in which they are made available.
+
+## VPN 4.3
+
+Guideline 4.3 - Design
+
+
+We noticed that your app provides the same feature set as other apps submitted to the App Store; it simply varies in content or language, which is considered a form of spam.
+
+The next submission of this app may require a longer review time, and this app will not be eligible for an expedited review until this issue is resolved.
+
+Next Steps
+
+- Review the Design section of the App Store Review Guidelines.
+- Ensure your app is compliant with all sections of the App Store Review Guidelines and the Terms & Conditions of the Apple Developer Program.
+- Once your app is fully compliant, resubmit your app for review.
+
+When creating multiple apps where content is the only varying element, you should offer a single app to deliver differing content to customers. If you would like to offer this content for purchase, it would be appropriate to use the in-app purchase API.
+
+Alternatively, you may consider creating a web app, which looks and behaves similar to a native app when the customer adds it to their Home screen. Refer to the Configuring Web Applications section of the Safari Web Content Guide for more information.
+
+Submitting apps designed to mislead or harm customers or evade the review process may result in the termination of your Apple Developer Program account. Review the Terms & Conditions of the Apple Developer Program to learn more about our policies regarding termination.
+
+### 解决
+
+开始用个人账号上传,vpn不允许个人账号，换公司账号，个人账号没有删除app 造成4.3
+删除个人账号app
+
+## VPN 第三次被拒
+
+From Apple
+
+    2. 1 Performance: App Completeness
+    2. 3 Performance: Accurate Metadata
+    4. Design: Preamble
+
+Guideline 2.1 - Performance - App Completeness
+
+
+We found that your in-app purchase products exhibited one or more bugs when reviewed on iPad running iOS 14.3 on Wi-Fi.
+
+Specifically, we were unable to complete the in-app purchase. An error message of failure payment displayed.
+
+Next Steps
+
+When validating receipts on your server, your server needs to be able to handle a production-signed app getting its receipts from Apple’s test environment. The recommended approach is for your production server to always validate receipts against the production App Store first. If validation fails with the error code "Sandbox receipt used in production," you should validate against the test environment instead.
+
+Resources
+
+You can learn more about testing in-app purchase products in your development sandbox environment in App Store Connect Developer Help.
+
+For more information on receipt validation, please see What url should I use to verify my receipt? in the In-App Purchase FAQ.
+
+Learn how to generate a receipt validation code in App Store Connect Developer Help.
+
+
+
+Guideline 2.1 - Information Needed
+
+
+Before we can continue the review of your app, we need additional information.
+
+Next Steps
+
+To help us proceed with the review of your app, please provide detailed information to the following questions. The more information you can provide upfront, the sooner we can complete your review.
+
+- What user information is your app collecting using VPN?
+- For what purposes are you collecting this information? Please provide a complete and clear explanation of all planned uses of this data.
+- Will the data be shared with any third parties? If so, for what purposes and where will this information be stored?
+
+Once you reply to this message in Resolution Center with the requested information, we can proceed with your review.
+
+Guideline 2.3.10 - Performance - Accurate Metadata
+
+
+We noticed that your app or its metadata includes irrelevant third-party platform information.
+
+Specifically, your app includes Android references in the app binary.
+
+Referencing third-party platforms in your app or its metadata is not permitted on the App Store unless there is specific interactive functionality.
+
+Next Steps
+
+To resolve this issue, please remove all instances of this information from your app and its metadata, including the app description, promotional text, What's New info, previews, and screenshots.
+
+
+
+Guideline 4.0 - Design
+
+
+Your app offers Sign in with Apple as a login option but does not use the appropriate Sign in with Apple button design, placement, and/or user interface elements. Specifically:
+
+- The  Sign in with Apple says 苹果登录 but should use the following localized version: 通过Apple登录.
+
+Next Steps
+
+Please revise the Sign in with Apple buttons in your app so that they are compliant with the App Store Review Guidelines and the Sign in With Apple Human Interface Guidelines.
+
+Resources
+
+For information on implementing Sign in with Apple in your app:
+
+- Review Displaying Sign in with Apple Buttons if your sign in process happens in a browser.
+- Review the Sign in with Apple Human Interface Guidelines for an overview of design and formatting recommendations for Sign in with Apple.
+
+Please see attached screenshots for details.
+
+### 解决
+
+- apple 登陆的button 按设计要求来
+- 不能含有android，安卓等字
+
+## VPN第四次隐藏内容被拒
+
+From Apple
+
+    2. 1 Performance: App Completeness
+    2. 3 Performance: Accurate Metadata
+
+Guideline 2.1 - Performance - App Completeness
+
+
+We found that your in-app purchase products exhibited one or more bugs when reviewed on iPad running iOS 14.3 on Wi-Fi.
+
+Specifically, we were still unable to complete the in-app purchase. An error message of failure payment displayed.
+
+Next Steps
+
+When validating receipts on your server, your server needs to be able to handle a production-signed app getting its receipts from Apple’s test environment. The recommended approach is for your production server to always validate receipts against the production App Store first. If validation fails with the error code "Sandbox receipt used in production," you should validate against the test environment instead.
+
+Resources
+
+You can learn more about testing in-app purchase products in your development sandbox environment in App Store Connect Developer Help.
+
+For more information on receipt validation, please see What url should I use to verify my receipt? in the In-App Purchase FAQ.
+
+Learn how to generate a receipt validation code in App Store Connect Developer Help.
+
+
+
+Guideline 2.3.1 - Performance
+
+
+We noticed that your app may contain hidden features, functionality, or content.
+
+Specifically, your app includes AliPay (支付寶), which provides access to external payment mechanisms and enables the purchase of content, services, or functionality by means other than the in-app purchase API.
+
+The App Store ecosystem is built on trust and users should never be misled about the apps they download. Attempting to hide features, functionality, or content in your app may lead to removal from the Apple Developer Program.
+
+Next Steps
+
+- Review the Performance section of the App Store Review Guidelines.
+- Ensure your app, as well as any third-party code and SDKs in your app, are compliant with all sections of the App Store Review Guidelines and the Apple Developer Program License Agreement.
+- Revise or remove any hidden features, functionality, or content in your app.
+- Once your app is fully compliant, resubmit for review.
+
+The next submission of this app may require a longer review time, and this app will not be eligible for an expedited review until this issue is resolved. If we misunderstood the intended behavior of your app, please reply to this message in Resolution Center to provide information on how the app is intended to work.
+
+Resources
+
+- Learn more about our policies for apps with suspected hidden features in App Store Review Guideline 2.3.1.
+- Learn more about our policies regarding removal from the Apple Developer Program in the Apple Developer Program License Agreement.
+
+Please see attached screenshots for details.
+
+### 解决
+
+- 图片名称有alipay 删除所有第三方支付相关的文字和图片
+- iap分未sandbox 和正式的  前端区分后端也区分
 
 ## 上线检查
 
