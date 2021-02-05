@@ -11,7 +11,7 @@
 
 ## 内存布局
 
-![img](../../Sources/ScreenShot2021-01-28at102618PM.png)
+![img](../../../Sources/ScreenShot2021-01-28at102618PM.png)
 
 栈区向下增长，堆区向上增长
 
@@ -76,11 +76,11 @@
 
 #### SideTables()结构
 
-![img](../../Sources/IMG_184062A4C446-1.jpeg)
+![img](../../../Sources/IMG_184062A4C446-1.jpeg)
 
 #### SideTable结构（散列表）
 
-![img](../../Sources/IMG_A08EA5644307-1.jpeg)
+![img](../../../Sources/IMG_A08EA5644307-1.jpeg)
 
 #### 为什么不是一个SideTable
 
@@ -120,7 +120,7 @@ size_t (unsigned long)
 
 weak_table_t 也是一张hash表
 
-![img](../../Sources/IMG_503A2F611834-1.jpeg)
+![img](../../../Sources/IMG_503A2F611834-1.jpeg)
 
 - weak_entry_t 结构体数组，存储实际的弱引用结构体指针
 
@@ -188,7 +188,7 @@ refcnt_result += it->second >> SIDE_TABLE_RC_SHIFT;
 
 #### dealloc实现
 
-![img](../../Sources/IMG_C7F95A5F056D-1.jpeg)
+![img](../../../Sources/IMG_C7F95A5F056D-1.jpeg)
 
 - nonpointer_isa 判断是否使用了非指针型的isa
 - weakly_referenced 是否有weak指针指向他
@@ -325,7 +325,7 @@ pthread_t const thread; 和线程一一对象
 
 #### AutoreleasePoolPage::push
 
-![img](../../Sources/IMG_926DCD7F483E-1.jpeg)
+![img](../../../Sources/IMG_926DCD7F483E-1.jpeg)
 
 #### [obj autorelease]实现
 
@@ -336,7 +336,7 @@ graph TB
     id2 --NO--> id4(add\obj\)
 ```
 
-![img](../../Sources/IMG_DF040CFCC81A-1.jpeg)
+![img](../../../Sources/IMG_DF040CFCC81A-1.jpeg)
 
 #### AutoreleasePoolPage::pop
 
