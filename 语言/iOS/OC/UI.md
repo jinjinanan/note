@@ -197,7 +197,6 @@ id12 --YES--> id13[结束]
 
 ### -(void)hitTest:(CGPoint)point withEvent:(UIEvent *)event 内部实现
 
-
 ```mermaid
 graph TB
 id1[start]-->id2{!v.hidden && v.userinterfactionEnabled &&v.alpha>0.001}
@@ -217,4 +216,150 @@ id7 --> id11[结束 ]
 id9 --> id11
 id10 --> id11
 ```
+
+### 方形button圆的点击事件
+
+```Objective-C
+
+-(UIview *)hiteTest:(CGPoint)point withEvent:(UIEvent *)event{
+    if(!self.userInteractionEnabled ||
+        [self isHidden] ||
+        self.alpha <= 0.01){
+            return nil;
+    }
+    if([self pointInside:point withEvent:event]){
+        //遍历当前对象子视图
+        __block UIView *hit = nil;
+        [self.subViews enumerateObjectsWithOptions:NSEnumerationReverse 
+        usingBlock:^(__kindof UIView *_Nonnull obj,NSUinteger idx,BOOL *_Nonnull stop){
+            //坐标转换
+            CGPoint vonvertPoint = [self convertPoint:point toView:obj];
+            //调用子视图的hittest方法
+            hit = [obj hitTest:vonvertPoint withEvent:event];
+            //如果找到了接受时间的对象 ，则停止遍历
+            if(hit){
+                *stop = YES
+            }
+        }];
+        
+    }
+    
+    if(hit){
+        return hit;
+    }
+    else{
+        return self;
+    }
+
+}
+
+-(BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{
+    CGFloat x1 = point.x;
+    CGFloat y1 = point.y;
+
+    CGFloat x2 = self.frame.size.width /2
+    CGFloat y2 = self.frame.size.height / 2
+
+    double dis = sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    
+    //在以当前空间中心为圆新半径为当前控件宽度的圆内
+    if(dis <= self.frame.size.width / 2>){
+        return YES
+    }
+    else{
+        return NO
+    }
+}
+```
+
+### 事件响应的流程
+
+```Objcetive-C
+-(void)touchesBegan:(NSSet *)touchs withEvent:(UIEvent *)event;
+-(void)touchesMoved:(NSSet *)touchs withEvent:(UIEvent *)event;
+-(void)touchesEnded:(NSSet *)touchs withEvent:(UIEvent *)event;
+```
+
+### 图像显示原理
+
+![img](../../../Sources/IMG_BDD9E4A3956A-12.jpeg)
+
+![img](../../../Sources/IMG_0805.jpg)
+
+CPU工作
+
+```mermaid
+graph LR
+subgraph Layout
+UI布局
+文本计算
+end
+subgraph display
+绘制(drawrect)
+end
+subgraph prepare
+图片编解码
+end
+subgraph commit
+提交位图
+end
+```
+
+GPU渲染管线
+
+```mermaid
+graph LR
+subgraph 顶点着色
+
+end
+subgraph 图元装配
+
+end
+subgraph 光栅化
+
+end
+subgraph 片段着色
+
+end
+subgraph 片段处理
+
+end
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
