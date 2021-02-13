@@ -26,6 +26,45 @@ func bubbleSort(numbers []int) []int {
 	return numbers
 }
 
+func quickSort(numbers []int, left int, right int) []int {
+
+	if len(numbers) < 2 || left >= right { // 边界
+		return numbers
+	}
+
+	var lefti = left
+
+	var rightj = right
+
+	var base = numbers[left]
+
+	var temp int
+	for lefti != rightj {
+		for numbers[rightj] >= base && rightj > lefti { // 边界
+			rightj--
+		}
+
+		for numbers[lefti] <= base && rightj > lefti { // 边界
+			lefti++
+		}
+
+		if lefti < rightj { // 边界
+			temp = numbers[lefti]
+			numbers[lefti] = numbers[rightj]
+			numbers[rightj] = temp
+		}
+		fmt.Println(lefti, rightj, base)
+	}
+
+	numbers[left] = numbers[lefti]
+	numbers[lefti] = base
+
+	quickSort(numbers, 0, lefti-1)
+	quickSort(numbers, lefti+1, right) // 边界
+
+	return numbers
+}
+
 //插入排序
 //Insertion Sort
 func insertionSort(numbers []int) []int {
@@ -131,6 +170,7 @@ const (
 	sortOfInsert = iota
 	sortOfShell
 	sortOfBubble
+	sortOfQuick
 )
 
 func run(algorithmType int) {
@@ -141,10 +181,13 @@ func run(algorithmType int) {
 		fmt.Println("希尔排序", ShellSort([]int{2, 1, 4, 7, 5, 1, 6, 8, 5}))
 	case sortOfBubble:
 		fmt.Println("冒泡排序", bubbleSort([]int{2, 1, 4, 7, 5, 1, 6, 8, 5}))
+	case sortOfQuick:
+		var ary = []int{2, 1, 4, 7, 5, 1, 6, 8, 5}
+		fmt.Println("快排", quickSort(ary, 0, len(ary)-1))
 	}
 
 }
 
 func main() {
-	run(sortOfBubble)
+	run(sortOfQuick)
 }
