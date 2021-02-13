@@ -2,6 +2,31 @@ package main
 
 import "fmt"
 
+//交换排序
+// Bubble Sort
+func bubbleSort(numbers []int) []int {
+	var n = len(numbers)
+	if n < 2 {
+		return numbers
+	}
+
+	var temp int
+
+	// var j int
+	for i := 0; i < n-1; i++ {
+		for j := 0; j < n-i-1; j++ {
+			if numbers[j] > numbers[j+1] {
+				temp = numbers[j]
+				numbers[j] = numbers[j+1]
+				numbers[j+1] = temp
+			}
+		}
+	}
+
+	return numbers
+}
+
+//插入排序
 //Insertion Sort
 func insertionSort(numbers []int) []int {
 	var temp int
@@ -98,9 +123,14 @@ func ShellSort2(arr []int) []int {
 	return arr
 }
 
+//选择排序
+
+//归并排序
+
 const (
 	sortOfInsert = iota
 	sortOfShell
+	sortOfBubble
 )
 
 func run(algorithmType int) {
@@ -109,9 +139,12 @@ func run(algorithmType int) {
 		fmt.Println("插入排序", insertionSort([]int{2, 1, 4, 7, 5, 1, 6, 8, 5}))
 	case sortOfShell:
 		fmt.Println("希尔排序", ShellSort([]int{2, 1, 4, 7, 5, 1, 6, 8, 5}))
+	case sortOfBubble:
+		fmt.Println("冒泡排序", bubbleSort([]int{2, 1, 4, 7, 5, 1, 6, 8, 5}))
 	}
+
 }
 
 func main() {
-	run(sortOfShell)
+	run(sortOfBubble)
 }
