@@ -326,25 +326,64 @@ subgraph 片段处理
 end
 ```
 
+GPU渲染完提交FrameBuffer
 
+### UI卡顿，掉帧的原因
 
+![img](../../../Sources/IMG_07FD329AA4FE-1.jpeg)
 
+#### 优化方案
 
+CPU工作
+    - 对创建，调整，销毁放到子线程做
+    - 预排版（布局计算，文本计算）放到子线程
+    - 预渲染（文本等异步绘制，图片编码解码）
 
+GPU优化
+    - 纹理渲染 （避免离屏渲染）
+    - 试图混合（减轻视图层级的复杂性）
 
+UIView的绘制原理
 
+![img](../../../Sources/IMG_D31047C01D04-1.jpeg)
 
+系统默认绘制流程
 
+![img](../../../Sources/IMG_82A02CAB913E-1.jpeg)
 
+异步绘制
 
+```Objective-C
+- [layer.delegate displayLayer:]
+```
 
+    - 代理负责生成对应的bitmap
+    - 设置bitmap作为layer.contents属性的值
 
+![img](../../../Sources/IMG_EA16C04020A8-1.jpeg)
 
+### 离屏渲染
 
+- On-Screen Reddering
+意为当前屏幕渲染，指的是GPU的渲染操作是在当前用于显示的屏幕缓冲区中进行
 
+- Off-Screen Rending
+意为离屏渲染，指的是GPU在当前屏幕缓冲区以外新开辟一个缓冲区进行渲染操作
 
+#### 何时触发
 
+- 圆角（当和maskToBounds一起使用时）
+- 图层蒙版
+- 阴影
+- 光栅化
 
+#### 为何要避免
+
+触发离屏渲染会曾增加GPU的工作量，导致CPU和GPU工作超过16.7ms，导致掉帧
+
+涉及到
+    - 创建新的渲染缓冲区
+    - 上下文切换
 
 
 
