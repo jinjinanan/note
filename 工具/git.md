@@ -37,6 +37,7 @@
 - git restore
 - git重置到某次提交
 - git查看状态
+- The current branch reading has no upstream branch.
 
 
 ### git 将本地仓库添加到远程
@@ -164,3 +165,9 @@ git不能提交（git认为写错了origin）。这时候需要使用 `--allow-u
 ### git 遇到数字文件名
 
 `git config --global core.quotepath false`
+
+## The current branch reading has no upstream branch.
+
+ `git push -u 远程主机名 本地分支名` 
+ 
+ 远程有对应分支则追踪，远程没有对应分支则创建后追踪
